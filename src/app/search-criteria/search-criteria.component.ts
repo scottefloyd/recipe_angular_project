@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EdamamService } from '../edamam.service';
 
 @Component({
   selector: 'search-criteria',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchCriteriaComponent implements OnInit {
 
-  constructor() { }
+
+  resultList: any[] = [];
+
+
+  constructor(private edamamService: EdamamService) { }
 
   ngOnInit() {
+  }
+
+  searchEdamam(form) {
+
+    this.edamamService.getRecipeData(form.value.recipename).subscribe
+    (response => {
+      
+      this.resultList = response["hits"];
+
+
+    });
+
+   
+    
+
   }
 
 }
