@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { EdamamService } from '../edamam.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { Recipe } from "../recipe";
+
 @Component({
   selector: 'recipe-list',
   templateUrl: './recipe-list.component.html',
@@ -7,7 +8,11 @@ import { EdamamService } from '../edamam.service';
 })
 export class RecipeListComponent implements OnInit {
 
-  constructor(private edamamService: EdamamService) { }
+ 
+  @Input() result: any;
+
+
+  constructor() { }
 
   ngOnInit() {
   }

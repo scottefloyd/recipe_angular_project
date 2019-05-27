@@ -6,15 +6,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EdamamService {
 
-  apikey: string = "c2abfafda6f2cb3001fe964447dfcca4";
+  apikey: string = "c2abfafda6f2cb3001fe964447dfcca4"; 
 
   constructor(private http: HttpClient) { }
 
 
 
-  getRecipeData() {
+  getRecipeData(search: string) {
 
-    return this.http.get(`https://api.edamam.com/search?q=chicken&app_id=596b2721&app_key=${this.apikey}&limit=25`);
+    return this.http.get(`https://api.edamam.com/search?q=${search}&app_id=596b2721&app_key=${this.apikey}&limit=25`);
 
   }
 
