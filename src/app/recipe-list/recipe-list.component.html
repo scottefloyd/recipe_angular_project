@@ -1,3 +1,14 @@
 <p>
   recipe-list works!
 </p>
+
+<div *ngFor="let list of resultList">
+<img src="{{recipe.data.thumbnail}}">
+<h4>{{recipe.data.title}} </h4>
+<p>{{recipe.data.rating}} </p>
+<p>{{recipe.data.calories}}</p>  
+
+</div>
+
+<search-criteria></search-criteria>
+
