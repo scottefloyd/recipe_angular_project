@@ -18,8 +18,11 @@ export class SearchCriteriaComponent implements OnInit {
       .getRecipeData(form.value.recipename)
       .subscribe(response => {
         this.resultList = response["hits"];
+        console.log(this.resultList)
       });
   }
+
+
 
   filterSearch(form) {
 
@@ -36,4 +39,7 @@ export class SearchCriteriaComponent implements OnInit {
       });
   }
 
+
+
 }
+

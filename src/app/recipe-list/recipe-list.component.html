@@ -1,7 +1,11 @@
 
 <!-- <h2>recipe</h2> -->
-<div>
+<div >
 <p> {{ result.recipe.label }} </p>
-<!-- <p> {{  }} </p> -->
-
+<img src="{{result.recipe.image}}" alt="">
+<p> Calories: {{result.recipe.calories}} </p>
+<p>Ingredients: {{result.recipe.ingredientLines["0"]}} </p>
+<p> Prep-Time:{{result.recipe.totalTime}} mins </p>
+<span> DELISH </span>
 </div>
+
