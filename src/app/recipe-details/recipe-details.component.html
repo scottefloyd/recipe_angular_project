@@ -1,3 +1,19 @@
-<p>
-  recipe-details works!
-</p>
+<!-- <p>
+  recipe-details works! Just needs one item out of array, not all!
+</p> -->
+<div>
+  <span class="title">{{recipe.recipe.label}} </span>
+<p> {{ recipe.recipe.ingredients.label}} </p>
+<img src="{{recipe.recipe.image}}" alt="">
+<p> Calories: {{recipe.recipe.calories}} </p>
+<p> Diet Label: {{recipe.recipe.dietLabels}} </p>
+<p> Prep-Time:{{recipe.recipe.totalTime}} mins </p>
+<p> Serving Size: {{recipe.recipe.yield}} </p>
+<p> Ingredients:</p>
+  <ul>
+    <li *ngFor="let ingredient of recipe.recipe.ingredientLines">
+      {{ ingredient }}
+    </li>
+  </ul>
+<a href="{{recipe.recipe.url}}">Full Directions!</a>
+</div>

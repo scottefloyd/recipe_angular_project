@@ -10,13 +10,13 @@ export class EdamamService {
 
   apikey: string = "c2abfafda6f2cb3001fe964447dfcca4";
 
-  constructor(private http: HttpClient, private router: Router ) {}
+  constructor(private http: HttpClient, private router: Router) { }
 
   getRecipeData(search: string) {
     return this.http
       .get(
         `https://api.edamam.com/search?q=${search}&app_id=596b2721&app_key=${
-          this.apikey}&limit=10`
+        this.apikey}&limit=10`
       )
       .subscribe(response => {
         this.resultList = response["hits"];
@@ -28,5 +28,15 @@ export class EdamamService {
 
   getRecipeList() {
     return this.resultList;
+  }
+
+  getRecipe(index: string | number): any {
+    // for (let recipe of this.resultList){
+    //   if (recipe.label == label){
+    //     return recipe;
+    //   }
+    // }
+    console.log(this.resultList[index]);
+    return this.resultList[index];
   }
 }

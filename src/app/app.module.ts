@@ -18,7 +18,7 @@ const appRoutes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "search", component: SearchCriteriaComponent },
   { path: "recipelist", component: RecipeListComponent },
-  { path: "recipelist/:id", component: RecipeDetailsComponent },
+  { path: "recipedetails/:index", component: RecipeDetailsComponent },
   { path: "favoritepage", component: FavoritePageComponent },
   { path: "**", component: ErrorComponentComponent }
 

@@ -1,13 +1,12 @@
 <H1>RESULTS</H1>
-<div *ngFor="let result of resultList">
-<p> {{ result.recipe.label }}</p>
+<div *ngFor="let result of resultList; index as i">
+<a [routerLink]="['/recipedetails', i]">{{ result.recipe.label}} </a>
 <img src="{{result.recipe.image}}" alt="">
 <p> Calories: {{result.recipe.calories}} </p>
 <p> Diet Label: {{result.recipe.dietLabels}} </p>
 <p> Prep-Time:{{result.recipe.totalTime}} mins </p>
 <p> Serving Size: {{result.recipe.yield}} </p>
 <span> DELISH </span>
-</div>
 
- 
+</div>
 
