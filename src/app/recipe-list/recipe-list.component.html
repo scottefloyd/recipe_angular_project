@@ -1,7 +1,4 @@
-
-<!-- <h2>recipe</h2> -->
-<div>
-<p> {{ result.recipe.label }} </p>
-<!-- <p> {{  }} </p> -->
-
+<h2>recipe</h2>
+<div *ngFor="let result of resultList; index as i">
+  <p>{{ result.recipe.label }}</p>
 </div>
