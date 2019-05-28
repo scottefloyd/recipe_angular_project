@@ -7,37 +7,30 @@ import { EdamamService } from "../edamam.service";
   styleUrls: ["./search-criteria.component.css"]
 })
 export class SearchCriteriaComponent implements OnInit {
-  resultList: any[] = [];
 
   constructor(private edamamService: EdamamService) {}
 
   ngOnInit() {}
 
-  searchEdamam(form) {
-    this.edamamService
-      .getRecipeData(form.value.recipename)
-      .subscribe(response => {
-        this.resultList = response["hits"];
-        console.log(this.resultList)   
-      });
-  }
+  searchEdamam(form): void {
+    this.edamamService.getRecipeData(form.value.recipename)
+    };
+  
 
+  // filterSearch(form) {
 
-
-  filterSearch(form) {
-
-    let filterValue = null;
-   if (form.value.vegetarian=true) {
-    filterValue = "health=vegetarian";
-   }
+  //   let filterValue = null;
+  //  if (form.value.vegetarian=true) {
+  //   filterValue = "health=vegetarian";
+  //  }
    
 
-    this.edamamService
-      .getRecipeData(filterValue)
-      .subscribe(response => {
-        this.resultList = response["hits"];
-      });
-  }
+  //   this.edamamService
+  //     .getRecipeData(filterValue)
+  //     .subscribe(response => {
+  //       this.resultList = response["hits"];
+  //     });
+  // }
 
 
 

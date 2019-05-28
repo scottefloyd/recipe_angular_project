@@ -1,7 +1,6 @@
-
-<!-- <h2>recipe</h2> -->
-<div >
-<p> {{ result.recipe.label }} </p>
+<H1>RESULTS</H1>
+<div *ngFor="let result of resultList">
+<p> {{ result.recipe.label }}</p>
 <img src="{{result.recipe.image}}" alt="">
 <p> Calories: {{result.recipe.calories}} </p>
 <p> Diet Label: {{result.recipe.dietLabels}} </p>
@@ -9,4 +8,6 @@
 <p> Serving Size: {{result.recipe.yield}} </p>
 <span> DELISH </span>
 </div>
+
+ 
 

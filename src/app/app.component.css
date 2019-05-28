@@ -1,0 +1,36 @@
+header {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #254a71;
+  padding: 10px 0 0 0;
+
+}
+
+nav {
+  font-family: 'Montserrat', sans-serif;
+  
+}
+nav a {
+  text-decoration: none;
+  font-variant: small-caps;
+  padding: 15px 0;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  display: inline-block;
+  width: 163px;
+
+}
+nav a:hover, nav a.active {
+  border-bottom: 4px solid #F2DCC2;
+}
+
+
+#logo {
+  margin-bottom: 15px;
+  width: 300px;
+}
