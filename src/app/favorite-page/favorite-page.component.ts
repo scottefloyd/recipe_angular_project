@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./favorite-page.component.css']
 })
 export class FavoritePageComponent implements OnInit {
+favList: any[] =[];
 
   constructor() { }
 
