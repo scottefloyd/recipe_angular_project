@@ -1,5 +1,5 @@
-section{
-    width: 650px;
+.section{
+    width: 750px;
     height: 500px;
       display: flex;
     flex-wrap: wrap;
@@ -7,8 +7,7 @@ section{
     padding: 25px;
     margin: 5px;
 }
-div{
-
+.result{
     width: 200px;
     border: 3px solid #254a71;
     border-radius: 5px;
@@ -24,7 +23,8 @@ img{
 }
 a{
     text-decoration-color: #254a71;
-   
+}
+
 .list-search {
 
   margin-top: 30px;

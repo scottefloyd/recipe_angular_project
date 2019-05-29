@@ -43,8 +43,9 @@
 </div>
 </section>
 
+<section class="section">
 <H2>RESULTS</H2>
-<div *ngFor="let result of resultList; index as i">
+<div  class= "result" *ngFor="let result of resultList; index as i">
   <a [routerLink]="['/recipedetails', i]">{{ result.recipe.label }} </a>
   <img src="{{ result.recipe.image }}" alt="" />
   <p>Calories: {{ result.recipe.calories | number: "1.0-0" }}</p>
@@ -54,7 +55,7 @@
   <!-- <button (click)="toggleFavorite($event)" *ngIf="!recipe.favorite">DELISH</button> -->
   <button (click)="addToFavorites(i)">DELISH</button>
 </div>
-
+</section>
 <!-- <button class="btn btn-sm"
     [ngClass]="{ 'disabled' : isSubmitting,
                  'btn-outline-primary': !article.favorited,
