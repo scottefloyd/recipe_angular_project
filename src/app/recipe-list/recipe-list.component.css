@@ -25,4 +25,28 @@ img{
 a{
     text-decoration-color: #254a71;
    
+.list-search {
+
+  margin-top: 30px;
+  text-align: center;
+}
+
+.calories, .servings {
+
+  display: inline-block;
+  margin-right: 45px;
+
+}
+
+.filters {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.filters h2 {
+
+  margin-right: 45px;
+  font-size: 18px;
 }

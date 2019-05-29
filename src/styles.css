@@ -8,5 +8,34 @@ body {
   background-position: fixed; */
 }
 
+a {
+  color: #75BF73;
+}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.login {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+
+button {
+
+  background-color: #75BF73;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 10px;
+  padding: 5px;
+  border: none;
+}
+
+input {
+  margin-right: 15px;
+  font-size: 14px;
+  padding: 7px;
+  border-radius: 10px;
+  border: none;
+}
