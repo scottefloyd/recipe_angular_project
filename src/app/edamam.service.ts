@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 })
 export class EdamamService {
   resultList: any[] = [];
+  favorites: any[] = [];
 
   apikey: string = "c2abfafda6f2cb3001fe964447dfcca4";
 
@@ -16,18 +17,22 @@ export class EdamamService {
     return this.http
       .get(
         `https://api.edamam.com/search?q=${search}&app_id=596b2721&app_key=${
-        this.apikey}&limit=10`
+          this.apikey}&limit=25`
       )
-      .subscribe(response => {
+      .toPromise().then(response => {
         this.resultList = response["hits"];
         console.log(this.resultList);
-
         this.router.navigate(['recipelist']);
+        return this.resultList;
       });
   }
 
   getRecipeList() {
     return this.resultList;
+  }
+
+  getFavorites() {
+    return this.favorites;
   }
 
   getRecipe(index: string | number): any {
@@ -39,4 +44,20 @@ export class EdamamService {
     console.log(this.resultList[index]);
     return this.resultList[index];
   }
+
+  addFavorite(favorited) {
+    
+    this.favorites.push(favorited);
+  }
+
+  deleteFavorite(index: number) {
+
+
+    this.favorites.splice(index, 1);
+    
+
+    console.log("hello");
+  }
+
 }
+
