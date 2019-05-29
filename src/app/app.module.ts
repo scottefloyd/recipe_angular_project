@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { EdamamService } from './edamam.service';
@@ -11,6 +11,8 @@ import { RecipeDetailsComponent } from './recipe-details/recipe-details.componen
 import { FavoritePageComponent } from './favorite-page/favorite-page.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorComponentComponent } from './error-component/error-component.component';
+import { MatRadioModule } from '@angular/material/radio';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [
 
@@ -38,7 +40,8 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule, MatRadioModule, 
+    BrowserAnimationsModule, ReactiveFormsModule
   ],
   providers: [EdamamService],
   bootstrap: [AppComponent]

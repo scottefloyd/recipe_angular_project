@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EdamamService } from "../edamam.service";
 
 @Component({
   selector: 'home',
@@ -7,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  resultList: any[] = [];
+
+  constructor(private edamamService: EdamamService) { }
 
   ngOnInit() {
   }
 
+  searchEdamam(form): void {
+    this.edamamService.getRecipeData(form.value.recipename).then(response => {
+      this.resultList = response;
+    });
+    // this.resultList = this.edamamService.getRecipeList();
+  }
 
 }
