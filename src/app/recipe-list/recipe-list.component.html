@@ -42,9 +42,9 @@
   </form>
 </div>
 </section>
-
-<section class="section">
 <H2>RESULTS</H2>
+<section class="section">
+
 <div  class= "result" *ngFor="let result of resultList; index as i">
   <a [routerLink]="['/recipedetails', i]">{{ result.recipe.label }} </a>
   <img src="{{ result.recipe.image }}" alt="" />
