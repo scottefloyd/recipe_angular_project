@@ -1,4 +1,6 @@
 
-
-
-
+<form #searchForm="ngForm" (ngSubmit)="searchEdamam(searchForm)">
+    <label>Find a recipe</label>
+    <input type="text" name="recipename" ngModel />
+    <button>Search</button>
+  </form>

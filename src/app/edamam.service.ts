@@ -17,13 +17,13 @@ export class EdamamService {
     return this.http
       .get(
         `https://api.edamam.com/search?q=${search}&app_id=596b2721&app_key=${
-        this.apikey}&limit=10`
+          this.apikey}&limit=25`
       )
-      .subscribe(response => {
+      .toPromise().then(response => {
         this.resultList = response["hits"];
         console.log(this.resultList);
-
         this.router.navigate(['recipelist']);
+        return this.resultList;
       });
   }
 
