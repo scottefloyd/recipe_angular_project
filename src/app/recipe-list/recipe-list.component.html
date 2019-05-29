@@ -33,18 +33,20 @@
 <input type="radio" name="servings" (change)="filterSearch('sevenplus')">
 </form>
 <H1>RESULTS</H1>
+<section>
 <div *ngFor="let result of resultList; index as i">
 <a [routerLink]="['/recipedetails', i]">{{ result.recipe.label}} </a>
 <img src="{{result.recipe.image}}" alt="">
-<p> Calories: {{result.recipe.calories}} </p>
+<p> Calories: {{result.recipe.calories | number: "1.0-0"}} </p>
 <p> Diet Label: {{result.recipe.dietLabels}} </p>
 <p> Prep-Time:{{result.recipe.totalTime}} mins </p>
 <p> Serving Size: {{result.recipe.yield}} </p>
 <!-- <button (click)="toggleFavorite($event)" *ngIf="!recipe.favorite">DELISH</button> -->
-<button (click)="addToFavorites(i)" >DELISH</button>
+
+<button (click)="addToFavorites(i)">DELISH</button>
 
 </div>
-
+</section>
               
 <!-- <button class="btn btn-sm"
     [ngClass]="{ 'disabled' : isSubmitting,

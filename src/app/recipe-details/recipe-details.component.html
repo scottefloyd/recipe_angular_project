@@ -1,11 +1,9 @@
-<!-- <p>
-  recipe-details works! Just needs one item out of array, not all!
-</p> -->
+<section>
 <div>
   <span class="title">{{recipe.recipe.label}} </span>
 <p> {{ recipe.recipe.ingredients.label}} </p>
 <a href="{{recipe.recipe.url}}"><img src="{{recipe.recipe.image}}" alt=""></a>
-<p> Calories: {{recipe.recipe.calories}} </p>
+<p> Calories: {{recipe.recipe.calories |number: "1.0-0"}} </p>
 <p> Diet Label: {{recipe.recipe.dietLabels}} </p>
 <p> Prep-Time:{{recipe.recipe.totalTime}} mins </p>
 <p> Serving Size: {{recipe.recipe.yield}} </p>
@@ -17,3 +15,4 @@
   </ul>
 <Span>Click picture for Full Directions!</Span>
 </div>
+</section>

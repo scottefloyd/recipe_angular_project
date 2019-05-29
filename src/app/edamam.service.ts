@@ -54,7 +54,6 @@ export class EdamamService {
 
 
     this.favorites.splice(index, 1);
-    
 
     console.log("hello");
   }
