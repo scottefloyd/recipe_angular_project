@@ -1,5 +1,5 @@
 .section{
-    width: 750px;
+    width: 7g50px;
     height: 500px;
       display: flex;
     flex-wrap: wrap;
@@ -24,11 +24,7 @@ img{
 a{
     text-decoration-color: #254a71;
 }
-<<<<<<< HEAD
-
-=======
    
->>>>>>> e17ba970a203a53a10f230077355995cc64fac53
 .list-search {
 
   margin-top: 30px;

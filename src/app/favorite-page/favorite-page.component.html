@@ -14,7 +14,9 @@
     <p>{{ favorite.recipe }}</p>
   
   </div> -->
-  <div *ngFor="let favorite of favorites; index as i">
+
+  <section class= "section">
+  <div class= "delish" *ngFor="let favorite of favorites; index as i">
     <a [routerLink]="['/recipedetails', i]">{{ favorite.recipe.label}} </a>
     <img src="{{favorite.recipe.image}}" alt="">
     <p> Calories: {{ favorite.recipe.calories | number: "1.0-0" }} </p>
@@ -25,3 +27,4 @@
     <button class="btn" (click)="removeFavorite(i)">[x]</button><span>{{favorite.$value}}</span>
   
   </div>
+  </section>
