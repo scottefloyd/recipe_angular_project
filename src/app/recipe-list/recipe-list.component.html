@@ -1,55 +1,63 @@
-<form #searchForm="ngForm" (ngSubmit)="searchEdamam(searchForm)">
-  <label>Find a recipe</label>
-  <input type="text" name="recipename" ngModel />
-  <button>Search</button>
-</form>
-
-<h2>Filter Results</h2>
-<form action="">
-<label for="">Calories low to high</label>
-<input
-  type="radio"
-  name="calories"
-  [value]="calorieshigh"
-  (change)="filterSearch('calorieslow')"
-/>
-<label for="">Calories high to low</label>
-<input
-  type="radio"
-  name="calories"
-  [value]="calorieshigh"
-  (change)="filterSearch('calorieshigh')"
-/>
-</form>
-
-<form action="">
-<label for="">Servings 1-3</label>
-<input type="radio" name="servings" (change)="filterSearch('onetothree')">
-
-<label for="">Servings 3-6</label>
-<input type="radio" name="servings" (change)="filterSearch('fourtosix')">
-
-<label for="">Servings 7+</label>
-<input type="radio" name="servings" (change)="filterSearch('sevenplus')">
-</form>
-<H1>RESULTS</H1>
-<div *ngFor="let result of resultList; index as i">
-<a [routerLink]="['/recipedetails', i]">{{ result.recipe.label}} </a>
-<img src="{{result.recipe.image}}" alt="">
-<p> Calories: {{result.recipe.calories}} </p>
-<p> Diet Label: {{result.recipe.dietLabels}} </p>
-<p> Prep-Time:{{result.recipe.totalTime}} mins </p>
-<p> Serving Size: {{result.recipe.yield}} </p>
-<!-- <button (click)="toggleFavorite($event)" *ngIf="!recipe.favorite">DELISH</button> -->
-<button (click)="addToFavorites(i)" >DELISH</button>
-
+<div class="list-search">
+  <form #searchForm="ngForm" (ngSubmit)="searchEdamam(searchForm)">
+    <label>Find a recipe</label>
+    <input type="text" name="recipename" ngModel />
+    <button>Search</button>
+  </form>
 </div>
 
-              
+<section class="filters">
+<h2>Filter Results:</h2>
+<div class="calories">
+  <h3>Calories</h3>
+  <form action="">
+    <label for="">Low to high</label>
+    <input
+      type="radio"
+      name="calories"
+      [value]="calorieshigh"
+      (change)="filterSearch('calorieslow')"
+    />
+    <label for="">High to low</label>
+    <input
+      type="radio"
+      name="calories"
+      [value]="calorieshigh"
+      (change)="filterSearch('calorieshigh')"
+    />
+  </form>
+</div>
+
+<div class="servings">
+  <h3>Serving Size</h3>
+  <form action="">
+    <label for="">1-3</label>
+    <input type="radio" name="servings" (change)="filterSearch('onetothree')" />
+
+    <label for="">3-6</label>
+    <input type="radio" name="servings" (change)="filterSearch('fourtosix')" />
+
+    <label for="">7+</label>
+    <input type="radio" name="servings" (change)="filterSearch('sevenplus')" />
+  </form>
+</div>
+</section>
+
+<H2>RESULTS</H2>
+<div *ngFor="let result of resultList; index as i">
+  <a [routerLink]="['/recipedetails', i]">{{ result.recipe.label }} </a>
+  <img src="{{ result.recipe.image }}" alt="" />
+  <p>Calories: {{ result.recipe.calories | number: "1.0-0" }}</p>
+  <p>Diet Label: {{ result.recipe.dietLabels }}</p>
+  <p>Prep-Time:{{ result.recipe.totalTime }} mins</p>
+  <p>Serving Size: {{ result.recipe.yield }}</p>
+  <!-- <button (click)="toggleFavorite($event)" *ngIf="!recipe.favorite">DELISH</button> -->
+  <button (click)="addToFavorites(i)">DELISH</button>
+</div>
+
 <!-- <button class="btn btn-sm"
     [ngClass]="{ 'disabled' : isSubmitting,
                  'btn-outline-primary': !article.favorited,
                  'btn-primary': article.favorited }"
     (click)="toggleFavorite()">DELISH
    </button> -->
-

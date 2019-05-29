@@ -1,0 +1,22 @@
+.home-search {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  padding-top: 80px;
+  text-align: center;
+}
+
+.home-bg {
+
+background-image: url("/assets/bg-img.png");
+  background-position: center;
+  height: 100%; 
+  background-repeat:no-repeat;
+  background-size: 100%;
+  opacity: 0.8;
+}
+
+h2 {
+
+  color: #fff;
+}
