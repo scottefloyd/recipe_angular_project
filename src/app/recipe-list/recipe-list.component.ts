@@ -1,4 +1,4 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { EdamamService } from "../edamam.service";
 
 @Component({
@@ -10,6 +10,7 @@ export class RecipeListComponent implements OnInit {
 
 
   resultList: any[] = [];
+  favorites: any[];
 
 
   constructor(private edamamService: EdamamService) { }
@@ -17,6 +18,15 @@ export class RecipeListComponent implements OnInit {
   ngOnInit() {
     this.resultList = this.edamamService.getRecipeList();
   }
+
+  addToFavorites(index: number): void {
+
+    this.edamamService.addFavorite(this.resultList[index]);
+
+    console.log("firing");
+
+}
+  
 
 
 }

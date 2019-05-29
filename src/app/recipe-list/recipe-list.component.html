@@ -6,7 +6,16 @@
 <p> Diet Label: {{result.recipe.dietLabels}} </p>
 <p> Prep-Time:{{result.recipe.totalTime}} mins </p>
 <p> Serving Size: {{result.recipe.yield}} </p>
-<span> DELISH </span>
+<!-- <button (click)="toggleFavorite($event)" *ngIf="!recipe.favorite">DELISH</button> -->
+<button (click)="addToFavorites(i)" >DELISH</button>
 
 </div>
+
+              
+<!-- <button class="btn btn-sm"
+    [ngClass]="{ 'disabled' : isSubmitting,
+                 'btn-outline-primary': !article.favorited,
+                 'btn-primary': article.favorited }"
+    (click)="toggleFavorite()">DELISH
+   </button> -->
 

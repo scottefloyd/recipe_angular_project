@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EdamamService } from "../edamam.service";
+
 
 @Component({
   selector: 'favorite-page',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavoritePageComponent implements OnInit {
 
-  constructor() { }
+  favorites: any[];
+  recipeList: any[];
 
-  ngOnInit() {
+
+  constructor(private edamamService: EdamamService) { }  
+
+   ngOnInit() {
+    this.favorites = this.edamamService.getFavorites();
   }
 
+  removeFavorite(index: number) {
+
+    this.edamamService.deleteFavorite(index);
+   
+  }
+
+
 }
+
